@@ -97,14 +97,14 @@ with col4:
     avg_users = round(daily_users_df["Total Users"].mean(), 2)
     st.metric("Rata-rata Users per Hari", value=avg_users)
 
-# Visualisasi 1: Tren Penyewaan Sepeda
+# Visualisasi Pertanyaan 1: Tren Penyewaan Sepeda
 fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(
     daily_users_df["Date"],
     daily_users_df["Total Users"],
     marker='o', 
     linewidth=2,
-    color="#90CAF9"
+    color="#344CB7"
 )
 
 ax.set_title("Tren Penyewaan Sepeda", fontsize=30, fontweight="bold")
@@ -114,28 +114,27 @@ ax.grid(True)
 
 st.pyplot(fig)
 
-# Visualisasi 5: Pie Chart Registered vs Casual Users
+# Visualisasi Pertanyaan 5: Pie Chart Registered vs Casual Users
 fig, ax = plt.subplots()
 ax.pie(
     [registered_users["Registered Users"].sum(), casual_users["Casual Users"].sum()],
     labels=["Registered Users", "Casual Users"],
     autopct="%1.1f%%",
-    colors=["#90CAF9", "#FFAB91"],
-    explode=(0.1, 0),
-    shadow=True,
-    startangle=5
+    colors=["#A7E6FF", "#5CB8E4"],
+    startangle=90,
+    wedgeprops={'width': 0.4}
 )
 ax.set_title("Registered vs Casual Users", fontsize=14, fontweight="bold")
 
 st.pyplot(fig)
 
-# Visualisasi 2: Penyewaan Berdasarkan Cuaca
+# Visualisasi Pertanyaan 2: Penyewaan Berdasarkan Cuaca
 fig, ax = plt.subplots(figsize=(16, 8))
 sns.barplot(
     data=detail_penyewa_cuaca,
     x="Weather Condition",
     y="Total Users",
-    palette=["#344CB7", "#7BC9FF", "#FFAB91"],
+    palette=["#344CB7", "#7BC9FF", "#7BC9FF"],
     ax=ax
 )
 
@@ -146,13 +145,13 @@ ax.set_ylim(0, detail_penyewa_cuaca["Total Users"].max() * 1.2)
 
 st.pyplot(fig)
 
-# Visualisasi 3: Penyewaan Berdasarkan Musim
+# Visualisasi Pertanyaan 3: Penyewaan Berdasarkan Musim
 fig, ax = plt.subplots(figsize=(16, 8))
 sns.barplot(
     data=detail_penyewa_musim,
     x="Season",
     y="Total Users",
-    palette=["#344CB7", "#7BC9FF", "#FFAB91", "#FFAB91"],
+    palette=["#A7E6FF", "#344CB7", "#000957", "#7BC9FF"],
     ax=ax
 )
 
@@ -163,7 +162,7 @@ ax.set_ylim(0, detail_penyewa_musim["Total Users"].max() * 1.2)
 
 st.pyplot(fig)
 
-# Visualisasi 4: Tren Penyewaan Sepeda Berdasarkan Jam
+# Visualisasi Pertanyaan 4: Tren Penyewaan Sepeda Berdasarkan Jam
 fig, ax = plt.subplots(figsize=(10, 5))
 sns.lineplot(
     data=detail_penyewa_jam,
