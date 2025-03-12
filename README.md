@@ -25,10 +25,10 @@ Dashboard ini dibuat menggunakan Streamlit untuk menganalisis data penyewaan sep
    Setelah menjalankan perintah di atas, dashboard akan terbuka secara otomatis di browser. Jika tidak, buka secara manual dengan mengakses URL yang muncul di terminal (biasanya `http://localhost:8501`).
 
 ## Fitur Dashboard
-- **Tren Penyewaan Sepeda**: Menampilkan jumlah penyewa sepeda berdasarkan waktu.
+- **Tren Penyewaan Sepeda**: Menampilkan grafik jumlah penyewa sepeda waktu ke waktu.
 - **Analisis Berdasarkan Pengguna**: Perbandingan pengguna terdaftar dan pengguna kasual.
 - **Analisis Berdasarkan Cuaca dan Musim**: Melihat bagaimana faktor eksternal mempengaruhi jumlah penyewa.
-- **Tren Penyewaan Berdasarkan Jam**: Menampilkan pola penggunaan sepeda sepanjang hari.
+- **Tren Penyewaan Berdasarkan Jam**: Menampilkan grafik penggunaan sepeda berdasarkan jam di sepanjang hari.
 
 ## Catatan
 - Pastikan semua dependensi telah terinstal sebelum menjalankan dashboard.
